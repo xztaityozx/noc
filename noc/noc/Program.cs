@@ -232,7 +232,7 @@ namespace NabeObfuscationCode
                 if (targets.Contains(item))
                 {
                     var idx = 0;
-                    while (item == targets[idx]) idx++;
+                    while (item != targets[idx]) idx++;
                     var nextMode = idx <= 25 ? Block.Mode.Small : idx <= 51 ? Block.Mode.Big : Block.Mode.Symbol;
 
                     if (nextMode != currentMode) rt += Block.InverseDictionary[nextMode];
