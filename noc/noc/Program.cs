@@ -10,7 +10,7 @@ namespace noc {
 
             if (args.Length != 0 && (args[0] == "-v" || args[0] == "--version")) {
                 Console.WriteLine(
-                    "noc - Nave Obfuscation Converter v1.1\nAuthor: xztaityozx\n Repo: https://github.com/xztaityozx/noc");
+                    "noc - Nave Obfuscation Converter v1.1\nAuthor: xztaityozx\nRepo: https://github.com/xztaityozx/noc");
                 return;
             }
 
@@ -156,6 +156,8 @@ namespace noc {
 
         private string Filter(Block block) {
             var rt = "";
+
+            if(block.BlockMode == Block.Mode.Base64) return "";
 
             for (var item = StringInfo.GetTextElementEnumerator(block.Message); item.MoveNext();) {
                 rt += ConvertTable[block.BlockMode][item.GetTextElement()];
