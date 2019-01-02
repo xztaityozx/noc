@@ -16,6 +16,8 @@ jobs:
   - script: echo Hello, world!
     displayName: 'Run a one-line script'
 
-  - script: |
-      dotnet test
-
+  - task: DotNetCoreCLI@2
+    inputs:
+      command: test
+      projects: '**/*Test/*.csproj'
+      arguments: '--configuration $(buildConfiguration)'
