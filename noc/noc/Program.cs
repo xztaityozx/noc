@@ -100,14 +100,14 @@ namespace noc {
 
             var list = new List<Block>();
 
-            string Filter(Block block) {
+            Func<Block, string> Filter = block =>  {
                 var filtered = Block.InverseDictionary[block.BlockMode];
                 for (var item = StringInfo.GetTextElementEnumerator(block.Message); item.MoveNext();) {
                     filtered += inverseTable[block.BlockMode][item.GetTextElement()];
                 }
 
                 return filtered;
-            }
+            };
 
             foreach (var b in EncodeSplit(str)) {
                 if (b.BlockMode == Block.Mode.Base64) {
