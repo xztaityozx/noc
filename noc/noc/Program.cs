@@ -10,7 +10,7 @@ namespace noc {
 
             if (args.Length != 0 && (args[0] == "-v" || args[0] == "--version")) {
                 Console.WriteLine(
-                    "noc - Nave Obfuscation Converter v1.1\nAuthor: xztaityozx\nRepo: https://github.com/xztaityozx/noc");
+                    "noc - Nave Obfuscation Converter v1.2\nAuthor: xztaityozx\nRepo: https://github.com/xztaityozx/noc");
                 return;
             }
 
