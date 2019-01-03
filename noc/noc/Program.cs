@@ -28,25 +28,30 @@ namespace noc {
 
             if (args.Length != 0 && (args[0] == "-d" || args[0] == "--decode")) {
                 var decoder = new NabeDecoder();
-                var src = args.Length == 1 ? GetStringFromStdIn() : string.Join(" ", args.Skip(1));
-                Console.WriteLine(decoder.Decode(src).Trim());
+
+                if (args.Length == 1) {
+                    string line;
+                    while ((line = Console.ReadLine()) != null) {
+                        Console.WriteLine(decoder.Decode(line.Trim()));
+                    }
+                }
+                else {
+                    Console.WriteLine(decoder.Decode(string.Join(" ", args.Skip(1))));
+                }
             }
             else {
                 var encoder = new NabeEncoder();
-                var src = args.Length == 0 ? GetStringFromStdIn() : string.Join(" ", args);
-                Console.WriteLine(encoder.Encode(src).Trim());
+                if (args.Length == 0) {
+                    string line;
+                    while ((line = Console.ReadLine()) != null) {
+                        Console.WriteLine(encoder.Encode(line.Trim()));
+                    }
+                }
+                else {
+                    Console.WriteLine(encoder.Encode(string.Join(" ", args)));
+                }
             }
 
-        }
-
-        private static string GetStringFromStdIn() {
-            var sb = new StringBuilder();
-            string line;
-            while ((line = Console.ReadLine()) != null) {
-                sb.AppendLine(line);
-            }
-
-            return sb.ToString();
         }
     }
 
@@ -121,6 +126,7 @@ namespace noc {
                 }
             }
 
+            //list.ForEach(Console.Error.WriteLine);
 
             return string.Join("", list.Select(Filter));
         }

@@ -1,8 +1,0 @@
-{
-  "profiles": {
-    "noc": {
-      "commandName": "Project",
-      "commandLineArgs": "--help"
-    }
-  }
-}
