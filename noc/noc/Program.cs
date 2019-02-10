@@ -10,7 +10,7 @@ namespace noc {
 
             if (args.Length != 0 && (args[0] == "-v" || args[0] == "--version")) {
                 Console.WriteLine(
-                    "noc - Nave Obfuscation Converter v1.2\nAuthor: xztaityozx\nRepo: https://github.com/xztaityozx/noc");
+                    "noc - Nave Obfuscation Converter v1.3\nAuthor: xztaityozx\nRepo: https://github.com/xztaityozx/noc");
                 return;
             }
 
@@ -54,7 +54,6 @@ namespace noc {
 
         }
     }
-
 
     public class NabeEncoder : Nabe {
 
@@ -232,10 +231,10 @@ namespace noc {
                 {Mode.Small, "辺"},
                 {Mode.Big, "邉"},
                 {Mode.Symbol, "邊"},
-                {Mode.Base64, "渡"},
+                {Mode.Base64, "部"},
             };
 
-            public static bool IsDelimiter(string str) => new[] {"辺", "邊", "邉", "渡"}.Contains(str);
+            public static bool IsDelimiter(string str) => new[] {"辺", "邊", "邉", "部"}.Contains(str);
             public string Message { get; set; }
             public Mode BlockMode { get; set; }
         }
