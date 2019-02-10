@@ -18,6 +18,7 @@ namespace noc {
             if (args.Length != 0 && (args[0] == "-h" || args[0] == "--help")) {
                 Console.WriteLine(
                     "Usage: noc [option] [string]\n[string]をワタナベ難読化シェル芸を使って難読化します\n[string]を指定しない場合，StdInから読み取られます");
+                Console.WriteLine("日本語などはBase64エンコードされてからワタナベ難読化されます");
                 Console.WriteLine("[option]\n  -d --decode\t デコードします");
                 Console.WriteLine("  -h --help\t ヘルプを出力して終了します");
                 Console.WriteLine("  -v --version\t バージョン情報を出力して終了します");
@@ -54,6 +55,7 @@ namespace noc {
 
         }
     }
+
 
     public class NabeEncoder : Nabe {
 
