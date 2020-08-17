@@ -4,7 +4,7 @@ on: [push]
 
 jobs:
   test:
-    name: xUnit test
+    name: Unit test
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
@@ -29,7 +29,7 @@ jobs:
       with:
         dotnet-version: ${{ matrix.dotnet-version }}
     - name: Test
-      working-directory: ./Test
+      working-directory: ./noc/Test
       run: dotnet test --verbosity normal -c Debug
 
   dotnet-publish:
@@ -67,15 +67,15 @@ jobs:
           dotnet-version: ${{ matrix.dotnet-version }}
 
       - name: dotnet publish
-        working-directory: ./ocs
+        working-directory: ./noc/noc
         run: |
-          dotnet publish -c Release -r ${{ steps.vars.outputs.runtime_id }} --self-contained true -p:PublishSingleFile=true -p:PublishReadyToRun=true -p:Version=${{ steps.vars.outputs.version }} -o ${{ steps.vars.outputs.runtime_id }}
+          dotnet publish -c Release -r ${{ steps.vars.outputs.runtime_id }} --self-contained true -p:Version=${{ steps.vars.outputs.version }} -o ${{ steps.vars.outputs.runtime_id }}
       
       - name: Upload build result
         uses: actions/upload-artifact@v1
         with:
           name: ${{ steps.vars.outputs.runtime_id }}
-          path: ocs/${{ steps.vars.outputs.runtime_id }}
+          path: noc/noc/${{ steps.vars.outputs.runtime_id }}
 
   create-releases:
     name: Create GitHub Release
