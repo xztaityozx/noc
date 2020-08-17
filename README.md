@@ -1,7 +1,7 @@
 # noc
-[![Build Status](https://dev.azure.com/taityonohibi/noc/_apis/build/status/xztaityozx.noc?branchName=master)](https://dev.azure.com/taityonohibi/noc/_build/latest?definitionId=1?branchName=master)
+![.NET Core CI/CD](https://github.com/xztaityozx/noc/workflows/.NET%20Core%20CI/CD/badge.svg?branch=master)
 
-ワタナベ難読化シェル芸用ツールです
+ワタナベ難読化シェル芸用ツールでore CI/CD]
 
 ## Usage
 
