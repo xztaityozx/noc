@@ -1,7 +1,7 @@
 # noc
 ![.NET Core CI/CD](https://github.com/xztaityozx/noc/workflows/.NET%20Core%20CI/CD/badge.svg?branch=master)
 
-ワタナベ難読化シェル芸用ツールでore CI/CD]
+ワタナベ難読化シェル芸用ツールです
 
 ## Usage
 
